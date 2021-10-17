@@ -1,0 +1,18 @@
+<div>
+    <h1></h1>
+    <div>
+        <div>
+            <h3>Capital: {{name}}</h3>
+            <h3>Population: </h3>
+            <h3>Languages: </h3>
+            <ul>
+                {{#each abilities}}
+                <li>
+                    {{ability.name}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <img src="{{sprites.front_default}}" alt="{{name}}">
+    </div>
+</div>
