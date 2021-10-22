@@ -1,9 +1,29 @@
 import cardInf from "../templates/card.hbs"
 
-fetch('https://pokeapi.co/api/v2/pokemon/1').then(a => {
-    return a.json()
-}).then(b => {
-        console.log(b);
-        const card = cardInf(b)
-        console.log(card);
+const cardCountry = document.querySelector('.container')
+const runSearch = document.querySelector('input')
+
+runSearch.addEventListener('submit', findCountry)
+
+function findCountry(e) {
+    e.preventDefault() // для аниперезагрузки стр при каждом поиске
+
+    const form = e.currentTarget
+    const queryCountry = form.elements.query.value //ссылка, что бы забрать текст из инпута
+
+    fetchCountry(queryCountry)
+        .then(countrySearch);
+}
+
+function fetchCountry(name) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        .then(a => {
+        return a.json()
     })
+}
+        
+function countrySearch(country) {
+        const card = cardInf(country)
+    cardCountry.innerHTML = card
+    console.log(country);
+    }
