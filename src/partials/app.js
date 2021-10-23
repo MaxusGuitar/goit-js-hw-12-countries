@@ -1,7 +1,7 @@
 import cardInf from "../templates/card.hbs"
 
 const cardCountry = document.querySelector('.container')
-const runSearch = document.querySelector('input')
+const runSearch = document.querySelector('.run-search')
 
 runSearch.addEventListener('submit', findCountry)
 
