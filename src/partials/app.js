@@ -1,4 +1,5 @@
 import cardInf from "../templates/card.hbs"
+import API from "./fetchCountries.js"
 
 const cardCountry = document.querySelector('.container')
 const runSearch = document.querySelector('.run-search')
@@ -11,18 +12,10 @@ function findCountry(e) {
     const form = e.currentTarget
     const queryCountry = form.elements.query.value //ссылка, что бы забрать текст из инпута
 
-    fetchCountry(queryCountry)
-        .then(countrySearch)
-        .catch((error) => console.log(error))
-        .finally(() => form.reset())
-}
-
-function fetchCountry(name) {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        .then(a => {
-        return a.json()
-    })
-}
+    API.fetchCountry(queryCountry)
+        .then(countrySearch).then(() => console.clear()) // очищает консоль после каждого поиска
+        .catch(() => console.log("There is no such country!!!"))
+        }
         
 function countrySearch(country) {
         const card = cardInf(country)
