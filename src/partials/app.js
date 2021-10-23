@@ -12,7 +12,9 @@ function findCountry(e) {
     const queryCountry = form.elements.query.value //ссылка, что бы забрать текст из инпута
 
     fetchCountry(queryCountry)
-        .then(countrySearch);
+        .then(countrySearch)
+        .catch((error) => console.log(error))
+        .finally(() => form.reset())
 }
 
 function fetchCountry(name) {
