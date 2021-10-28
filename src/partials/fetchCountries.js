@@ -1,7 +1,7 @@
-const BASE_URL = 'https://restcountries.com/v3'
+const BASE_URL = 'https://pokeapi.co/api/v2'
 
 function fetchCountry(name) {
-    return fetch(`${BASE_URL}/name/${name}`)
+    return fetch(`${BASE_URL}/pokemon/${name}`)
         .then(a => a.json()
     )
 }
