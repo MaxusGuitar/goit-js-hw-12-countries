@@ -2,17 +2,17 @@
     <h1>{{name}}</h1>
     <div>
         <div>
-            <h3>height: {{height}}</h3>
-            <h3>order: {{order}}</h3>
-            <h3>abilities: </h3>
+            <h3>Capital: {{capital}}</h3>
+            <h3>Population: {{population}}</h3>
+            <h3>Languages: </h3>
             <ul>
-                {{#each abilities}}
+                {{#each languages}}
                 <li>
-                    {{ability.name}}
+                    {{languages.name}}
                 </li>
                 {{/each}}
             </ul>
         </div>
-        <img src="{{sprites.front_default}}" alt="{{name}}">
+        <img src="{{flags.png}}" alt="{{name}}">
     </div>
 </div>
