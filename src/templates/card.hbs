@@ -6,13 +6,13 @@
             <h3>Population: {{population}}</h3>
             <h3>Languages: </h3>
             <ul>
-                {{#each languages}}
+                {{#each this.languages}}
                 <li>
-                    {{languages.name}}
+                    {{name}}
                 </li>
                 {{/each}}
             </ul>
         </div>
-        <img src="{{flags.png}}" alt="{{name}}">
+        <img src="{{flag}}" alt="{{name}}">
     </div>
 </div>
