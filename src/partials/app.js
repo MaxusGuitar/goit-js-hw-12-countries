@@ -18,7 +18,7 @@ function findCountry(e) {
         }
         
 function countrySearch(country) {
-        const card = cardInf(country)
+        const card = cardInf(country[0])
     cardCountry.innerHTML = card
     console.log(country);
     }
