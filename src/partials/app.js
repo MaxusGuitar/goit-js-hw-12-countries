@@ -18,9 +18,8 @@ runSearch.addEventListener('input', debounce(() => {
         .catch(showError)
 }, 300))
 
-function showError(error) {
-    cardCountry.innerHTML = `There is no such country!!!`
-            console.log(error);
+function showError() {
+    Notiflix.Notify.failure('Oops, there is no country with that name')
         }
         
 function countrySearch(country) {
