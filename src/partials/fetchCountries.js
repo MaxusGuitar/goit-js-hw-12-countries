@@ -2,13 +2,16 @@ const BASE_URL = 'https://restcountries.com/v2'
 
 function fetchCountry(name) {
     return fetch(`${BASE_URL}/name/${name}`)
-        .then(response => {
+        .then(function(response) {
             if (!response.ok) {
-        throw new Error(response.statusText);
-    }
+                throw new Error(response.statusText);
+            }
             
-            return response.json();
+            return response
             
+        })
+        .then(response => {
+            return response.json()
         })
 }
 
